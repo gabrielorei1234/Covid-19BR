@@ -12,7 +12,7 @@ Path            = "C:\\Users\\gabri\\miniconda3\\Lib\\site-packages\\geckodriver
 driver = webdriver.Firefox(options=option,executable_path=Path)
 #1 pegar o conteudo html a partir da url
 driver.get(url)
-time.sleep(1)
+time.sleep(2)
 
 #Pegar os Casos Totais
 TotalCases = driver.find_element_by_xpath("/html/body/app-root/ion-app/ion-router-outlet/app-home/ion-content/painel-geral-component/div/card-totalizadores-component/div/div[2]/div[2]/div[1]").text
@@ -57,7 +57,7 @@ curados = SplitString[1]
 #Acompanhamento
 andamento = driver.find_element_by_xpath("/html/body/app-root/ion-app/ion-router-outlet/app-home/ion-content/painel-geral-component/div/card-totalizadores-component/div/div[1]/div[2]").text
 SplitString         =  re.split("Em acompanhamento\n", andamento)
-andamento = SplitString[0]
+andamento = SplitString[1]
 
 
 print("Casos totais: " + TotalCases + " registrados.")
